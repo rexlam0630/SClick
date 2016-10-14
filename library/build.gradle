@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'sclick'
+
+    publishedGroupId = 'hk.ids.gws.android.sclick'
+    libraryName = 'sclick'
+    artifact = 'library'
+
+    libraryDescription = 'Prevent unwanted double click or any event'
+
+    siteUrl = 'https://github.com/RexLKW/AFragment'
+    gitUrl = 'https://github.com/RexLKW/AFragment.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'rexlkw'
+    developerName = 'Rex Lam'
+    developerEmail = 'rex@genie-ws.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+apply from: 'https://raw.githubusercontent.com/RexLKW/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/RexLKW/JCenter/master/bintrayv1.gradle'
