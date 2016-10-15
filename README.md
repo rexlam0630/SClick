@@ -76,7 +76,7 @@ private void bar() {
 public void onBackPressed() {
     if (SClick.check("exit-intended", 1250)) {
         // Ask user if really want to quit
-        Toast.makeText(this, "", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Click once more to quit", Toast.LENGTH_LONG);
     } else {
         // Quit app
         finishAffinity();
