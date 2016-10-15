@@ -70,6 +70,20 @@ private void bar() {
 }
 ```
 
+```java
+// Double click "Back" button to exit app within 1.25sec
+@Override
+public void onBackPressed() {
+    if (SClick.check("exit-intended", 1250)) {
+        // Ask user if really want to quit
+        Toast.makeText(this, "", Toast.LENGTH_LONG);
+    } else {
+        // Quit app
+        finishAffinity();
+    }
+}
+```
+
 ## Setting
 ###Global settings
 
